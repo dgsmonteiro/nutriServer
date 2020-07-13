@@ -21,8 +21,8 @@ require('./app/controllers/index')(app);
 
 
 https.createServer({
-  key: fs.readFileSync('../../certificado/LoginFTP.key'),
-  cert: fs.readFileSync('../../certificado/LoginFTP.cert')
+  key: fs.readFileSync('/var/www/certificado/chave.key'),
+  cert: fs.readFileSync('/var/www/certificado/cert.pem')
 }, app)
 .listen(3000);
 
