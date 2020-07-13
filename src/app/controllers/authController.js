@@ -147,12 +147,11 @@ router.get('/listar_servicos', async(req, res) => {
 router.get('/listar_agendas', async(req, res) => {
     try {
         
-
-       
         let agendas = await Agenda.find();
         let agendasSelecionadas = [];
+        let servico = await Servico.findById(req.query.servicoId);
         for (let agenda of agendas) {
-            if (agenda.servico.includes(req.query.servicoId)) {
+            if (agenda.servico.includes(servico.name)) {
                 agenda.agendamentos = await Agendamento.find({agendaId: agenda.id});
                 agendasSelecionadas.push(agenda);
             }

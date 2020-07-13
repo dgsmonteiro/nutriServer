@@ -21,8 +21,8 @@ require('./app/controllers/index')(app);
 
 
 https.createServer({
-  key: fs.readFileSync('/etc/letsencrypt/live/tatiane.ntr.br/privkey.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/tatiane.ntr.br/fullchain.pem')
+  key: fs.readFileSync('../../certificado/LoginFTP.key'),
+  cert: fs.readFileSync('../../certificado/LoginFTP.cert')
 }, app)
 .listen(3000);
 
