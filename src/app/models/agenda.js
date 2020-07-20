@@ -39,6 +39,16 @@ const AgendaSchema = new mongoose.Schema({
         required: false,
         select: true
     },
+    lat: {
+        type: String,
+        required: false,
+        select: true
+    },
+    lng: {
+        type: String,
+        required: false,
+        select: true
+    },
     valor: {
         type: String,
         required: false,

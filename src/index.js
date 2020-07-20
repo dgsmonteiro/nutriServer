@@ -20,12 +20,12 @@ app.use(function(req, res, next) {
 require('./app/controllers/index')(app);
 
 
-https.createServer({
-  key: fs.readFileSync('/var/www/certificado/chave.key'),
-  cert: fs.readFileSync('/var/www/certificado/cert.pem')
-}, app)
-.listen(3000);
-
-
-// http.createServer(app)
+// https.createServer({
+//   key: fs.readFileSync('../../certificado/chave.key'),
+//   cert: fs.readFileSync('../../certificado/cert.pem')
+// }, app)
 // .listen(3000);
+
+
+http.createServer(app)
+.listen(3000);
